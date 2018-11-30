@@ -98,7 +98,7 @@ BEGIN
 			fetch ancestor_list into ancestorId;
 			while num != 1 do
 				insert into t_user_ancestor_relation (ancestor_id, user_id, user_level) values(ancestorId, uid, userLevel);
-				-- 父id每循环一次，等级加1
+				-- 祖先id每循环一次，等级加1
 				set userLevel = userLevel + 1;
 				fetch ancestor_list into ancestorId;
 			end while;
